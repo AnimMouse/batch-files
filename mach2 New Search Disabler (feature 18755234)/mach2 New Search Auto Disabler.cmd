@@ -1,6 +1,5 @@
-:@echo off
-:: Under Constrution, not working
-exit
+@echo off
+:: Requires mach2 0.5.0.0 up
 setlocal
 if /i not "%CD%" == "%WinDir%\system32" goto NOTAdmin
 
@@ -11,6 +10,7 @@ if errorlevel 0 goto Revert
 
 :Revert
 mach2 revert 18755234
+echo -------------------
 goto AutoCheck
 
 :Disable
