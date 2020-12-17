@@ -1,5 +1,5 @@
 @echo off
-:This Program patches the autorun.inf to prevent shortcut virus.
+:: This Program patches the autorun.inf to prevent shortcut virus.
 setlocal
 title USB Vaccine
 
@@ -37,10 +37,10 @@ cls
 If EXIST %DriveLetter%:\ (goto CheckIfTheVaccineExist) ELSE (goto NotExist)
 
 :CheckIfTheVaccineExist
-If EXIST %DriveLetter%:\autorun.inf\con (goto Antidote) ELSE (goto Vaccine)
+If EXIST %DriveLetter%:\autorun.inf\con (goto RemoveVaccine) ELSE (goto Vaccine)
 
 :NotExist
-echo The drive is not existing.
+echo The drive does not exist.
 pause
 goto TheQuestion
 
@@ -51,12 +51,12 @@ CHOICE /c:yn /n /m Choice:
 if errorlevel 2 goto TheQuestion
 if errorlevel 1 goto StartVaccine
 
-:Antidote
+:RemoveVaccine
 echo Do you want to Remove Vaccine on this drive?
 echo Y=Yes N=No
 CHOICE /c:yn /n /m Choice:
 if errorlevel 2 goto TheQuestion
-if errorlevel 1 goto StartAntidote
+if errorlevel 1 goto StartRemoveVaccine
 
 :StartVaccine
 cls
@@ -69,7 +69,7 @@ echo Finished!
 pause
 goto TheQuestion
 
-:StartAntidote
+:StartRemoveVaccine
 cls
 %DriveLetter%:
 cd autorun.inf

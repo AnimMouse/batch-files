@@ -7,4 +7,5 @@ set /p video=Video ID:
 if NOT defined video goto Start
 youtube-dl "%video%"
 echo Finished!
+echo --------------------
 goto Start

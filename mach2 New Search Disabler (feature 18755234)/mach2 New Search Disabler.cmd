@@ -4,7 +4,7 @@ if /i not "%CD%" == "%WinDir%\system32" goto NOTAdmin
 
 :TheQuestion
 mach2 display
-echo -------------------
+echo --------------------
 echo Does feature 18755234 still enabled? Y or N?
 CHOICE /c:yn /n /m "Choice:"
 if errorlevel 2 goto Disable
@@ -18,7 +18,7 @@ goto TheQuestion
 :Disable
 cls
 mach2 disable 18755234
-echo -------------------
+echo --------------------
 echo Disabled!
 timeout /t 5
 exit

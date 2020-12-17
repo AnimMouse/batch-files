@@ -10,12 +10,12 @@ if errorlevel 0 goto Revert
 
 :Revert
 mach2 revert 18755234
-echo -------------------
+echo --------------------
 goto AutoCheck
 
 :Disable
 mach2 disable 18755234
-echo -------------------
+echo --------------------
 echo Disabled!
 timeout /t 5
 exit

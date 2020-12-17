@@ -12,5 +12,4 @@ cls
 goto Start
 :: libopus -b:a 64K
 :: ffmpeg -hide_banner -h encoder=hevc_nvenc
-:: -vsync passthrough
 :: -vsync vfr -r 30
