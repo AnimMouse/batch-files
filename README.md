@@ -1,2 +1,4 @@
 # AnimMouse's Batch Programs
-This is all my batch files that I have made.
+This is a collection of batch files I wrote.
+
+## Summary
