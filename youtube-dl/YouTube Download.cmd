@@ -1,5 +1,6 @@
 @echo off
 setlocal
+title %~n0
 :Start
 echo Type the YouTube video ID
 set video=
