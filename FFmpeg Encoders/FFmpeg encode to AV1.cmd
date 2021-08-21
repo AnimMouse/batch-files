@@ -1,5 +1,6 @@
 @echo off
 setlocal
+title %~n0
 :Start
 echo Type the Filename
 set filename=
@@ -16,4 +17,3 @@ pause
 cls
 goto Start
 :: libopus -b:a 64K
-:: ffmpeg -h encoder=libaom-av1

@@ -1,6 +1,6 @@
 @echo off
 setlocal
-title SumatraPDF Install for All Users
+title %~n0
 :Start
 echo Type the Filename of SumatraPDF Installer
 echo This batch file should be placed in the same location beside the installer.

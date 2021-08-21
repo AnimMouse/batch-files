@@ -1,5 +1,6 @@
 @echo off
 setlocal
+title %~n0
 if /i not "%CD%" == "%WinDir%\system32" goto NOTAdmin
 
 :TheQuestion

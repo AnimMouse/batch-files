@@ -1,5 +1,6 @@
 @echo off
 setlocal
+title %~n0
 :Start
 echo Type the Filename
 set filename=
@@ -20,4 +21,3 @@ echo Finished!
 pause
 cls
 goto Start
-:: libopus -b:a 64K

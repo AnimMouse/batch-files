@@ -1,5 +1,6 @@
 @echo off
 setlocal
+title %~n0
 :: Date
 set CUR_YYYY=%date:~10,4%
 set CUR_MM=%date:~4,2%
@@ -16,5 +17,3 @@ set dateandtime=%CUR_YYYY%-%CUR_MM%-%CUR_DD% %CUR_HH%.%CUR_NN%.%CUR_SS%
 ffmpeg -hide_banner -hwaccel d3d11va -f gdigrab -framerate 30 -i desktop -f dshow -i audio="Stereo Mix" -c:v hevc_amf -b:v 5M -quality:v 4 -profile_tier:v high -c:a libopus -b:a 64K "Record %dateandtime%.mkv"
 pause
 exit
-:: ffmpeg -hide_banner -h encoder=hevc_amf
-:: ffmpeg -hide_banner -list_devices true -f dshow -i dummy

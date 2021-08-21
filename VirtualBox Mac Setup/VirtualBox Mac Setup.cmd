@@ -1,5 +1,6 @@
 @echo off
 setlocal
+title %~n0
 if not exist "C:\Program Files\Oracle\VirtualBox\" goto NotExist
 :TheQuestion
 echo Type the name of the macOS Virtual Machine

@@ -1,6 +1,7 @@
 @echo off
 :: Requires mach2 0.5.0.0 up
 setlocal
+title %~n0
 if /i not "%CD%" == "%WinDir%\system32" goto NOTAdmin
 
 :AutoCheck

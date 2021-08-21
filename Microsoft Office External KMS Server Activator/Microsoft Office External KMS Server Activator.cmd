@@ -1,6 +1,6 @@
 @echo off
 setlocal
-title Microsoft Office External KMS Server Activator
+title %~n0
 :Start
 echo Type the external KMS server address
 set server=
