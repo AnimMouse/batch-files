@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 echo Type filename to test decrypt
 read -p "Filename: " filename
 filenamenogpg="$(basename "$filename" .gpg)"
-gpg -o "Test $filenamenogpg" -d "$filename"
+gpg --output "Test $filenamenogpg" --decrypt "$filename"
 echo Finished!
 sleep 5

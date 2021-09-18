@@ -18,8 +18,10 @@ echo copy or flac, etc.
 set aencoder=
 set /p aencoder=Audio Encoder:
 if NOT defined aencoder goto AEncoder
-ffmpeg -hide_banner -hwaccel auto -i "%filename%" -c:v ffv1 -level %level% -pix_fmt yuv444p10le -c:a "%aencoder%" "%filename% FFV1 Lossless.mkv"
+ffmpeg -hide_banner -hwaccel auto -i "%filename%" -c:v ffv1 -level "%level%" -c:a "%aencoder%" "%filename% FFV1.mkv"
 echo Finished!
 pause
 cls
 goto Start
+
+:: -pix_fmt yuv444p10le

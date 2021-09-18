@@ -17,8 +17,9 @@ echo copy or flac, etc.
 set aencoder=
 set /p aencoder=Audio Encoder:
 if NOT defined aencoder goto AEncoder
-ffmpeg -hide_banner -hwaccel auto -i "%filename%" -c:v libx265 -preset "%preset%" -x265-params lossless=1 -pix_fmt yuv444p10le -c:a "%aencoder%" "%filename% x265 Lossless.mkv"
+ffmpeg -hide_banner -hwaccel auto -i "%filename%" -c:v libx265 -preset "%preset%" -x265-params lossless=1 -c:a "%aencoder%" "%filename% x265 Lossless.mkv"
 echo Finished!
 pause
 cls
 goto Start
+:: -pix_fmt yuv444p10le
