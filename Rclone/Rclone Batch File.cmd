@@ -14,10 +14,10 @@ if NOT defined remote goto Remote
 echo -------------------
 echo To upload, press 1
 echo To download, press 2
-CHOICE /c:12 /n /m Choice:
+choice /c:12 /n /m Choice:
 cls
-if %errorlevel% EQU 2 goto Download
-if %errorlevel% EQU 1 goto Upload
+if errorlevel 2 goto Download
+if errorlevel 1 goto Upload
 
 :Upload
 echo Type the filename to upload to %remote%
@@ -26,7 +26,7 @@ set /p filename=Filename:
 if /i "%filename%" == "exit" goto Remote
 if NOT defined filename goto Upload
 echo -------------------
-rclone copy "%filename%" "%remote%:" -P
+rclone copy "%filename%" "%remote%:" --progress
 goto Upload
 
 :Download
@@ -36,5 +36,5 @@ set /p filename=Filename:
 if /i "%filename%" == "exit" goto Remote
 if NOT defined filename goto Download
 echo -------------------
-rclone copy "%remote%:%filename%" . -P
+rclone copy "%remote%:%filename%" . --progress
 goto Download
