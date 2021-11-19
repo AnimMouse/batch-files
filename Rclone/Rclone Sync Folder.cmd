@@ -35,7 +35,7 @@ set /p localfolder=Local Folder:
 if /i "%localfolder%" == "exit" goto Remote
 if NOT defined localfolder goto Upload
 echo -------------------
-rclone sync "%localfolder%" "%remote%:%remotefolder%" --progress --no-update-modtime
+rclone sync "%localfolder%" "%remote%:%remotefolder%" -P --no-update-modtime
 goto Upload
 
 :Download
@@ -45,5 +45,5 @@ set /p localfolder=Local Folder:
 if /i "%localfolder%" == "exit" goto Remote
 if NOT defined localfolder goto Download
 echo -------------------
-rclone sync "%remote%:%remotefolder%" "%localfolder%" --progress
+rclone sync "%remote%:%remotefolder%" "%localfolder%" -P
 goto Download

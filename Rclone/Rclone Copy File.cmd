@@ -26,7 +26,7 @@ set /p filename=Filename:
 if /i "%filename%" == "exit" goto Remote
 if NOT defined filename goto Upload
 echo -------------------
-rclone copy "%filename%" "%remote%:" --progress
+rclone copy "%filename%" "%remote%:" -P
 goto Upload
 
 :Download
@@ -36,5 +36,5 @@ set /p filename=Filename:
 if /i "%filename%" == "exit" goto Remote
 if NOT defined filename goto Download
 echo -------------------
-rclone copy "%remote%:%filename%" . --progress
+rclone copy "%remote%:%filename%" . -P
 goto Download

@@ -16,7 +16,7 @@ set filename=
 set /p filename=Filename:
 if /i "%filename%" == "exit" goto Key
 if NOT defined filename goto Filename
-for /F "delims=" %%i in ("%filename%") do set filename_noext=%%~ni Test
+for /F "delims=" %%i in ("%filename%") do set filename_noext=Test %%~ni
 set key-random=%random%
 echo %key%> age-decrypt-%key-random%.key
 echo -------------------
