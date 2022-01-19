@@ -21,29 +21,29 @@ if NOT defined remotefolder goto RemoteFolder
 
 :Question
 echo -------------------
-echo To sync upload, press 1
-echo To sync download, press 2
+echo To copy upload, press 1
+echo To copy download, press 2
 choice /c:12 /n /m Choice:
 cls
 if errorlevel 2 goto Download
 if errorlevel 1 goto Upload
 
 :Upload
-echo Type the folder to sync upload to %remote% inside %remotefolder%
+echo Type the folder to copy upload to %remote% inside %remotefolder%
 set localfolder=
 set /p localfolder=Local Folder:
 if /i "%localfolder%" == "exit" goto Remote
 if NOT defined localfolder goto Upload
 echo -------------------
-rclone sync "%localfolder%" "%remote%:%remotefolder%" -P
+rclone copy "%localfolder%" "%remote%:%remotefolder%" -P
 goto Upload
 
 :Download
-echo Type the folder to sync download from %remote% inside %remotefolder%
+echo Type the folder to copy download from %remote% inside %remotefolder%
 set localfolder=
 set /p localfolder=Local Folder:
 if /i "%localfolder%" == "exit" goto Remote
 if NOT defined localfolder goto Download
 echo -------------------
-rclone sync "%remote%:%remotefolder%" "%localfolder%" -P
+rclone copy "%remote%:%remotefolder%" "%localfolder%" -P
 goto Download
