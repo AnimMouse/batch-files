@@ -1,4 +1,4 @@
 @echo off
 title %~n0
-youtube-dl -U --verbose
+yt-dlp -U --verbose
 timeout /t 5
