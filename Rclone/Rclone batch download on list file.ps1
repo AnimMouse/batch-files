@@ -1,0 +1,1 @@
+Get-Content list.txt | ForEach-Object {rclone copy "source:$_" . -P}
