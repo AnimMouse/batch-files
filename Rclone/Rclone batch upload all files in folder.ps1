@@ -1,1 +1,0 @@
-Get-ChildItem | ForEach-Object {rclone copy "$_" "dest:" -P}
